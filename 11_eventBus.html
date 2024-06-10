@@ -13,7 +13,8 @@
     <script>
         var eventBus = new Vue(); //1. 이벤트 버스로 사용할 새 인스턴스 생성
 
-        Vue.component('child-component',{ //2. 
+        Vue.component('child-component',{ 
+            //2. 하위 컴포넌트에 template 속성과 methods 속성을 정의
             template: '<div>하위 컴포넌트 영역입니다.<button v-on:click="showLog">show</button></div>', 
             methods: {
                 showLog: function(){

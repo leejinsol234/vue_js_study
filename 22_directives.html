@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Vue Template - Directives</title>
+    </head>
+    <body>
+        <div id="app">
+            <a v-if="flag">두잇 Vue.js</a> <!--flag값이 true이므로 화면에 표시-->
+            <ul>
+                <li v-for="system in systems">{{ system }}</li> <!--배열의 요소 개수만큼 <li>태그가 반복되어 {{system}}으로 각 요소의 값을 화면에 표시-->
+            </ul>
+            <p v-show="flag">두잇 Vue.js</p> <!--v-if와 마찬가지로 flag값이 true이므로 화면에 표시-->
+            <h5 v-bind:id="uid">뷰 입문서</h5> <!--HTML 태그의 id 속성을 뷰 데이터에 선언한 uid 값과 연결하여 화면에 표시-->
+            <button v-on:click="popupAllert">경고창 버튼</button> <!--'경고창 버튼'을 클릭했을 때 해당 이벤트를 감지하여 methods 속성에 선언한 popupAllert() 메서드를 수행-->
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    flag: true,
+                    //flag: false,
+                    systems: ['android', 'ios', 'window'],
+                    uid: 10
+                },
+                methods: {
+                    popupAllert: function(){
+                        return alert('경고창 표시');
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

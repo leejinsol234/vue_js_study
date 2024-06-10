@@ -19,7 +19,7 @@
     <script>
         Vue.component('child-component',{ //2. 하위 컴포넌트인 child-component를 등록. 등록함과 동시에 뷰 인스턴스 자체가 상위 컴포넌트가 됨.
             props: ['propsdata'], //3. child-component의 내용에 props 속성으로 propsdata를 정의
-            template: '<p>{{ propsdata }}</p>', //5. message인 'Hello Vue! passed from Parent Component'가 됨
+            template: '<p>{{ propsdata }}</p>', //5. message인 'Hello Vue! passed from Parent Component'가 됨.
         });
 
         new Vue({ //1. 뷰 인스턴스 생성(상위 컴포넌트)
