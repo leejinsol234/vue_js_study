@@ -42,7 +42,7 @@ module.exports = {
           loaders: {
           }
 ```
-vue 파일에는 vue-loader를 적용한다. vue 파일의 <template>, <script>, <style> 등의 내용이 자바스크립트로 변환되어 웹팩 빌드 결과물에 포함된다.</br></br>
+vue 파일에는 vue-loader를 적용한다. vue 파일의 template, script, style 등의 내용이 자바스크립트로 변환되어 웹팩 빌드 결과물에 포함된다.</br></br>
 ```javascript
           // other vue-loader options go here
         }
