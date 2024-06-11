@@ -3,7 +3,7 @@
 var path = require('path') 
 var webpack = require('webpack') 
 ```
-output 속성에서 사용할 노드 path 라이브러리와 웹팩 플로그인에서 사용할 node_modules의 웹팩 라이브러리를 node_modules 폴더에서 로딩하여 path와 webpack에 각각 저장한다.</br></br>
+output 속성에서 사용할 노드 path 라이브러리와 웹팩 플러그인에서 사용할 node_modules의 웹팩 라이브러리를 node_modules 폴더에서 로딩하여 path와 webpack에 각각 저장한다.</br></br>
 
 ```javascript
 module.exports = {
