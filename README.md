@@ -6,12 +6,13 @@ var path = require('path')
 var webpack = require('webpack') 
 ```
 output 속성에서 사용할 노드 path 라이브러리와 웹팩 플러그인에서 사용할 node_modules의 웹팩 라이브러리를 node_modules 폴더에서 로딩하여 path와 webpack에 각각 저장한다.</br></br>
-
+#### entry 속성
 ```javascript
 module.exports = {
   entry: './src/main.js',
 ```
 웹팩으로 빌드할 파일을 src 폴더 밑의 main.js 파일로 지정한다. main.js 파일에 정의한 내용에 따라 애플리케이션의 구성 요소 및 파일들이 웹팩으로 번들링(빌드)된다.</br></br>
+#### output 속성
 ```javascript
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -20,6 +21,7 @@ module.exports = {
   },
 ```
 웹팩으로 빌드를 하고 난 결과물 파일의 위치와 이름을 지정한다. 결과물 파일의 위치는 dist/build.js이다.</br></br>
+#### module 속성
 ```javascript
   module: {
     rules: [
@@ -64,6 +66,7 @@ vue 파일에는 vue-loader를 적용한다. vue 파일의 <template>, <script>,
   },
 ```
 이미지 파일들은 file-loader를 이용하여 자바스크립트 파일로 변환한다.</br></br>
+#### resolve 속성
 ```javascript
   resolve: {
     alias: {
@@ -73,6 +76,7 @@ vue 파일에는 vue-loader를 적용한다. vue 파일의 <template>, <script>,
   },
 ```
 웹팩으로 빌드할 때 뷰 라이브러리의 여러 유형 중 어떤 걸 선택할 지 지정한다. 여기서 설정된 vue.esm.js는 최신 웹팩 버전과 사용할 수 있는 Full 버전의 라이브러리를 의미하며, 이렇게 별도로 설정하지 않으면 런타임 버전인 vue.runtime.esm.js를 사용한다.</br></br>
+#### devServer 속성
 ```javascript
   devServer: {
     historyApiFallback: true,
@@ -81,18 +85,20 @@ vue 파일에는 vue-loader를 적용한다. vue 파일의 <template>, <script>,
   },
 ```
 웹팩 데브 서버 관련 속성을 지정한다. historyApiFallback 속성은 클라이언트 사이드 라우팅인 뷰 라우터와 함께 사용하기 위해 true로 지정한다. noInfo 속성은 처음 서버를 시작할 때만 웹팩 빌드 정보를 보여주고, 이후 변경 시에는 빌드 정보를 보여주지 않는다. overlay 속성은 웹팩으로 빌드할 때 오류가 있으면 브라우저 화면 전체에 오류를 표시한다.</br></br>
+#### performance 속성
 ```javascript
   performance: {
     hints: false
   },
 ```
 웹팩으로 빌드한 파이르이 크기가 250kb를 넘으면 경고 메시지를 표시할 지를 설정한다. hints가 false이므로 크기와 관계 없이 경고가 표시되지 않는다.</br></br>
+#### devtool 속성
 ```javascript
   devtool: '#eval-source-map'
 }
 ```
 웹팩으로 빌드된 파일로 웹 앱을 구동했을 때 개발자 도구에서 사용할 디버깅 방식을 지정한다. (htttps://webpack.js.org/configuration/devtool/ 에서 여러 옵션 참고) </br></br>
-하단은 배포 시 설정 코드이다.
+#### 배포 시 옵션 설정
 ```javascript
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
