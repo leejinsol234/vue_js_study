@@ -1,10 +1,10 @@
 ## webpack.config.js (webpack 설정 파일 분석)
-
-var path = require('path') *output 속성에서 사용할 노드 path 라이브러리와*
-var webpack = require('webpack') *웹팩 플러그인에서 사용할 node_modules의 웹팩 라이브러리를 node_modules 폴더에서 로딩하여 각각 path와 webpack에 저장*
+```javascript
+var path = require('path') 
+var webpack = require('webpack') 
 
 module.exports = {
-  entry: './src/main.js', *웹팩으로 빌드할 파일을 src 폴더 및의 main.js 파일로 지정한다. main.js 파일에 정의한 내용에 따라 애플리케이션으 구성 요소 및 파일들이 웹팩으로 빌드된다.*
+  entry: './src/main.js', 
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
@@ -78,3 +78,4 @@ if (process.env.NODE_ENV === 'production') {
     })
   ])
 }
+```
