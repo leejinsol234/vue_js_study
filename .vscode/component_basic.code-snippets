@@ -1,0 +1,9 @@
+{
+    "Component Basic": {
+        // 템플릿 이름
+        "prefix": "stav", // 스니펫을 호출하는데 사용할 키워드
+        "body": [
+            "<template></template>\n<script>\nextport default {\n\tname:'',\n\tcomponents: {},\n\tdata() {\n\treturn {\n\t\t\tsampleData: ''\n\t\t};\n\t},\n\tbeforeCreate() {},\n\tcreated() {},\n\tbeforeMount() {},\n\tmounted() {},\n\tbeforeUpdate() {},\n\tupdated(){},\n\tbeforeUnmount() {},\n\tunmounted(){},\n\tmethod: {}\n}\n</script>"
+        ]
+    }
+}
