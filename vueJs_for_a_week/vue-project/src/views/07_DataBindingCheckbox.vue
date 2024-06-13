@@ -1,0 +1,15 @@
+<template>
+    <div>
+        <label><input type="checkbox" v-model="checked" true-value="yes" false-value="no" />{{ checked }}</label>
+        <!--체크/해제 되었을 때의 기본 값을 변경-->
+    </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            checked: true,
+        };
+    },
+};
+</script>

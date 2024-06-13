@@ -5,7 +5,21 @@
         <router-link to="/databindinginputtext">Data Bounding Input Text</router-link> |
         <router-link to="/databindinginputnumber">Data Bounding Input Number</router-link> |
         <router-link to="/databindingtextarea">Data Bounding Textarea</router-link> |
-        <router-link to="/databindingselect">Data Bounding Select</router-link>
+        <router-link to="/databindingselect">Data Bounding Select</router-link> |
+        <router-link to="/databindingcheckbox">Data Bounding Checkbox</router-link> |
+        <router-link to="/databindingcheckbox2">Data Bounding Checkbox2</router-link> |
+        <router-link to="/databindingradio">Data Bounding Radio</router-link> |
+        <router-link to="/databindingattribute">Data Bounding Attribute</router-link> |
+        <router-link to="/databindingbutton">Data Bounding Button</router-link> |
+        <router-link to="/databindingclass">Data Bounding Class</router-link> |
+        <router-link to="/databindingclass2">Data Bounding Class2</router-link> |
+        <router-link to="/databindingstyle">Data Bounding Style</router-link> |
+        <router-link to="/databindinglist">Data Bounding List</router-link> |
+        <router-link to="/renderingvif">Rendering v-if</router-link> |
+        <router-link to="/eventclick">Event Click</router-link> |
+        <router-link to="/eventchange">Event Change</router-link> | <router-link to="/computed">Computed</router-link> |
+        <router-link to="/watch">Watch</router-link> |
+        <router-link to="/watch2">Watch2</router-link>
     </nav>
     <router-view />
 </template>
