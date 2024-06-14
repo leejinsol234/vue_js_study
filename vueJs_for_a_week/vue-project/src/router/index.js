@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import NestedComponent from '../views/NestedComponent.vue';
 
 const routes = [
     {
@@ -142,6 +143,17 @@ const routes = [
         path: '/watch2',
         name: 'Watch2',
         component: () => import(/* webpackChunkName: "watch2" */ '../views/component_basic/21_Watch2.vue'),
+    },
+    {
+        path: '/databindinglist2',
+        name: 'DataBindingList2',
+        component: () =>
+            import(/* webpackChunkName: "databindinglist2" */ '../views/component_basic/22_DataBindingList2.vue'),
+    },
+    {
+        path: '/nested',
+        name: 'NestedComponent',
+        component: NestedComponent,
     },
 ];
 

@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <router-link to="/">Home</router-link> | <router-link to="/databinding">Data Bounding</router-link> |
+        <router-link to="/">Home</router-link> | <router-link to="/nested">Data Bounding</router-link> |
         <router-link to="/databindinghtml">Data Binding Html</router-link> |
         <router-link to="/databindinginputtext">Data Binding Input Text</router-link> |
         <router-link to="/databindinginputnumber">Data Binding Input Number</router-link> |
@@ -18,8 +18,8 @@
         <router-link to="/renderingvif">Rendering v-if</router-link> |
         <router-link to="/eventclick">Event Click</router-link> |
         <router-link to="/eventchange">Event Change</router-link> | <router-link to="/computed">Computed</router-link> |
-        <router-link to="/watch">Watch</router-link> |
-        <router-link to="/watch2">Watch2</router-link>
+        <router-link to="/watch">Watch</router-link> | <router-link to="/watch2">Watch2</router-link> |
+        <router-link to="/databindinglist2">DataBindingList2</router-link> |
     </nav>
     <router-view />
 </template>
