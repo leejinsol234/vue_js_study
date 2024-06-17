@@ -8,3 +8,18 @@ module.exports = {
  * - 컴포넌트 import 시 다음과 같이 처리한다.
  */
 // import(/* webpackPrefetch: true */ './views/About.vue');
+
+const target = 'http://127.0.0.1:3000'; //proxy 요청을 보낼 서버 주소
+
+module.exports = {
+    devServer: {
+        port: 8080,
+        proxy: {
+            //proxy 요청을 보낼 api 시작 부분
+            '^/api': {
+                target,
+                changeOrigin: true,
+            },
+        },
+    },
+};

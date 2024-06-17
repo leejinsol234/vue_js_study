@@ -20,6 +20,7 @@
         <router-link to="/eventchange">Event Change</router-link> | <router-link to="/computed">Computed</router-link> |
         <router-link to="/watch">Watch</router-link> | <router-link to="/watch2">Watch2</router-link> |
         <router-link to="/databindinglist2">DataBindingList2</router-link> |
+        <router-link to="/mixins">Mixins</router-link> | <router-link to="/plugins">Plugins</router-link> |
     </nav>
     <router-view />
 </template>

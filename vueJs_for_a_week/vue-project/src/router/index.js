@@ -19,7 +19,7 @@ const routes = [
     {
         path: '/databinding',
         name: 'DataBinding',
-        component: () => import(/* webpackChunkName: "databinding" */ '../views/01_DataBinding.vue'),
+        component: () => import(/* webpackChunkName: "databinding" */ '../views/component_basic/01_DataBinding.vue'),
     },
     {
         path: '/databindinghtml',
@@ -154,6 +154,16 @@ const routes = [
         path: '/nested',
         name: 'NestedComponent',
         component: NestedComponent,
+    },
+    {
+        path: '/mixins',
+        name: 'Mixins',
+        component: () => import(/* webpackChunkName: "plugins" */ '../views/component_advanced/12_Mixins.vue'),
+    },
+    {
+        path: '/plugins',
+        name: 'Plugins',
+        component: () => import(/* webpackChunkName: "plugins" */ '../views/component_advanced/14_Plugins.vue'),
     },
 ];
 
