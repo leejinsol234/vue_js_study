@@ -158,12 +158,27 @@ const routes = [
     {
         path: '/mixins',
         name: 'Mixins',
-        component: () => import(/* webpackChunkName: "plugins" */ '../views/component_advanced/12_Mixins.vue'),
+        component: () => import(/* webpackChunkName: "mixins" */ '../views/component_advanced/12_Mixins.vue'),
     },
     {
         path: '/plugins',
         name: 'Plugins',
         component: () => import(/* webpackChunkName: "plugins" */ '../views/component_advanced/14_Plugins.vue'),
+    },
+    {
+        path: '/kakaologin',
+        name: 'KakaoLogin',
+        component: () => import(/* webpackChunkName: "kakaologin" */ '../views/KakaoLogin.vue'),
+    },
+    {
+        path: '/naverlogin',
+        name: 'NaverLogin',
+        component: () => import(/* webpackChunkName: "naverlogin" */ '../views/NaverLogin.vue'),
+    },
+    {
+        path: '/googlelogin',
+        name: 'GoogleLogin',
+        component: () => import(/* webpackChunkName: "googlelogin" */ '../views/GoogleLogin.vue'),
     },
 ];
 

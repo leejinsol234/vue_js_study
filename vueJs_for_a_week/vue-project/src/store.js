@@ -1,6 +1,6 @@
 import { createsStore } from 'vuex';
 //Vuex 애플리케이션의 중심에는 store가 있다. store(저장소)는 애플리케이션 상태를 저장하고 있는 컨테이너이다.
-const store = createStore({
+const store = createsStore({
     state() {
         return {
             count: 0,

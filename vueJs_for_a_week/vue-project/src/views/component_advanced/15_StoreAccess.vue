@@ -7,11 +7,11 @@
 export default {
     computed: {
         count(){
-            retutn this.$store.state.count;
+            return this.$store.state.count;
         },
         //store(저장소)의 getters에 정의된 값에 접근할 수 있다.
         cartCount(){
-            retutn this.$store.getters.cartCount;
+            return this.$store.getters.cartCount;
         }
     },
     methods: {

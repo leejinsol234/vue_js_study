@@ -21,6 +21,9 @@
         <router-link to="/watch">Watch</router-link> | <router-link to="/watch2">Watch2</router-link> |
         <router-link to="/databindinglist2">DataBindingList2</router-link> |
         <router-link to="/mixins">Mixins</router-link> | <router-link to="/plugins">Plugins</router-link> |
+        <router-link to="/kakaologin">KaKao Login</router-link> |
+        <router-link to="/naverlogin">Naver Login</router-link> |
+        <router-link to="/googlelogin">Google Login</router-link>
     </nav>
     <router-view />
 </template>
