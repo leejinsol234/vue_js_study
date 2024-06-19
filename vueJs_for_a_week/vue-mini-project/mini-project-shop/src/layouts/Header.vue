@@ -24,9 +24,14 @@
                     <li class="nav-item">
                         <router-link class="nav-link" to="/detail">제품상세페이지</router-link>
                     </li>
-                    <li class="nav-item">
+                    <li v-if="user.email != undefined" class="nav-item">
                         <router-link class="nav-link" to="/sales">제품등록페이지</router-link>
                     </li>
+                    <!--사용자 정보가 있는 경우에는 로그아웃 버튼이 보이고, 사용자 정보가 없는 경우에는 로그인 버튼이 보이도록-->
+                    <li v-if="user.email == undefined">
+                        <button class="btn btn-danger" type="button" @click="kakaoLogin">로그인</button>
+                    </li>
+                    <li v-else><button class="btn btn-danger" type="button" @click="kakaoLogout">로그아웃</button></li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -40,5 +45,48 @@
 <script>
 export default {
     name: 'header',
+    computed: {
+        user() {
+            return this.$store.state.user;
+        },
+    },
+    methods: {
+        kakaoLogin() {
+            window.Kakao.Auth.login({
+                scope: 'profile, accout_emial, gender',
+                success: this.getProfile,
+            });
+        },
+        getProfile(authObj) {
+            console.log(authObj);
+            window.Kakao.API.request({
+                url: '/v2/user/me',
+                success: (res) => {
+                    const kakao_account = res.kakao_account;
+                    console.log(kakao_account);
+                    this.login(kakao_account);
+                    alert('로그인 성공!');
+                },
+            });
+        },
+        async login(kakao_account) {
+            await this.$api('/api/login', {
+                param: [
+                    { email: kakao_account.email, nickname: kakao_account.profile.nickname },
+                    { nickname: kakao_account.profile.nickname },
+                ],
+            });
+
+            this.$store.commit('user', kakao_account);
+        },
+        kakaoLogout() {
+            window.Kakao.Auth.logout((response) => {
+                console.log(response);
+                this.$store.commit('user', {});
+                alert('로그아웃');
+                this.$router.push({ path: '/' });
+            });
+        },
+    },
 };
 </script>
