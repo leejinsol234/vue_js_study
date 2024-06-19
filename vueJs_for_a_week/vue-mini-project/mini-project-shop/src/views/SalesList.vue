@@ -48,46 +48,48 @@
 
 <script>
 export default {
-    data(){
+    data() {
         return {
-            productList: []
+            productList: [],
         };
     },
-    create(){
+    create() {
         this.getProductList();
     },
     methods: {
-        async getProductList(){
-            this.productList = await this.$api("/api/productList2",{});
+        async getProductList() {
+            this.productList = await this.$api('/api/productList2', {});
             console.log(this.productList);
         },
-        goToInsert(){
-            this.$router.push({path:'/create'});
+        goToInsert() {
+            this.$router.push({ path: '/create' });
         },
-        goToDetail(product_id){
-            this.$router.push({path:'/detail', query:{product_id:product_id}});
+        goToDetail(product_id) {
+            this.$router.push({ path: '/detail', query: { product_id: product_id } });
         },
-        goToUPdate(product_id){
-            this.$router.push({path:'/update', query:{product_id:product_id}});
+        goToUPdate(product_id) {
+            this.$router.push({ path: '/update', query: { product_id: product_id } });
         },
-        goToImageInsert(product_id){
-            this.$router.push({path:'/imate_insert', query:{product_id:product_id}});
+        goToImageInsert(product_id) {
+            this.$router.push({ path: '/imate_insert', query: { product_id: product_id } });
         },
-        deleteProduct(product_id){
-            this.$swal.fire({
-                title: "정말 삭제하시겠습니까?",
-                showCancelButton: true,
-                confirmButtonText: '삭제',
-                cancelButtonTextL '취소'
-            }).then(async (result)=>{
-                if(result.isConfirmed){
-                    console.log(product_id)
-                    await this.$api("/api/productDelete",{param:[product_id]});
-                    this.getProductList();
-                    this.$swal.fire('삭제되었습니다!','','success')
-                }
-            });
-        }
-    }
-}
+        deleteProduct(product_id) {
+            this.$swal
+                .fire({
+                    title: '정말 삭제하시겠습니까?',
+                    showCancelButton: true,
+                    confirmButtonText: '삭제',
+                    cancelButtonText: '취소',
+                })
+                .then(async (result) => {
+                    if (result.isConfirmed) {
+                        console.log(product_id);
+                        await this.$api('/api/productDelete', { param: [product_id] });
+                        this.getProductList();
+                        this.$swal.fire('삭제되었습니다!', '', 'success');
+                    }
+                });
+        },
+    },
+};
 </script>
