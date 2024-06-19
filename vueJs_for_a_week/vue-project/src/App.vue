@@ -23,7 +23,6 @@
         <router-link to="/mixins">Mixins</router-link> | <router-link to="/plugins">Plugins</router-link> |
         <router-link to="/kakaologin">KaKao Login</router-link> |
         <router-link to="/naverlogin">Naver Login</router-link> |
-        <router-link to="/googlelogin">Google Login</router-link>
     </nav>
     <router-view />
 </template>
