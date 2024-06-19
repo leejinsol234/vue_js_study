@@ -14,14 +14,14 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-4 col-md-6" :key="i" v-for="(product, i) in productList">
                     <div class="card" style="width: 18rem">
-                        <a @click="goToDetail(product.id)" stype="cursor:pointer;"
+                        <a @click="goToDetail(product.id)" style="cursor: pointer"
                             ><img :src="'/download/${product.path}'" class="card-img-top" alt="..."
                         /></a>
                         <div class="card-body">
                             <h5 class="card-title">{{ product.product_name }}</h5>
                             <p class="card-text">
-                                <span class="badge bg-dark text-white mr-1">{{ product.category1 }}</span>
-                                <span class="badge bg-dark text-white mr-1">{{ product.category2 }}</span>
+                                <span class="badge bg-dark text-white me-1">{{ product.category1 }}</span>
+                                <span class="badge bg-dark text-white me-1">{{ product.category2 }}</span>
                                 <span class="badge bg-dark text-white">{{ product.category3 }}</span>
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -43,24 +43,24 @@
 
 <script>
 export default {
-    data(){
+    data() {
         return {
-            productList: []
+            productList: [],
         };
     },
     //제품 리스트 화면이 열림과 동시에 화면상에 제품 목록을 출력해야 하므로
     //Vue 컴포넌트의 created() 훅을 통해 컴포넌트가 생성됨과 동시에 제품 목록을 가져오도록 한다.
-    created(){
+    created() {
         this.getProductList();
     },
-    methods:{
-        async getProductList(){
-            this.productList = await this.$api("/api/productList",{});
+    methods: {
+        async getProductList() {
+            this.productList = await this.$api('/api/productList', {});
             console.log(this.productList);
         },
-        goToDetail(product_id){
-            this.$router.push(path:'detail', query:{product_id:product_id});
-        }
-    }
-}
+        goToDetail(product_id) {
+            this.$router.push({ path: '/detail', query: { product_id: product_id } });
+        },
+    },
+};
 </script>

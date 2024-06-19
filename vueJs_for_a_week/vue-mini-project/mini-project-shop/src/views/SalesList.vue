@@ -53,7 +53,7 @@ export default {
             productList: [],
         };
     },
-    create() {
+    created() {
         this.getProductList();
     },
     methods: {
@@ -67,11 +67,11 @@ export default {
         goToDetail(product_id) {
             this.$router.push({ path: '/detail', query: { product_id: product_id } });
         },
-        goToUPdate(product_id) {
+        goToUpdate(product_id) {
             this.$router.push({ path: '/update', query: { product_id: product_id } });
         },
         goToImageInsert(product_id) {
-            this.$router.push({ path: '/imate_insert', query: { product_id: product_id } });
+            this.$router.push({ path: '/image_insert', query: { product_id: product_id } });
         },
         deleteProduct(product_id) {
             this.$swal

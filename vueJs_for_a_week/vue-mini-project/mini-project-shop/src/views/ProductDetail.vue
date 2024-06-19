@@ -134,7 +134,7 @@ export default {
             let total = this.total + cnt;
             if (total < 1) total = 1;
             this.total = total;
-            this.totalPrice = this.productDetail.producr_price * this.total;
+            this.totalPrice = this.productDetail.product_price * this.total;
         },
         getCurrencyFormat(value) {
             return this.$currencyFormat(value);
@@ -143,7 +143,7 @@ export default {
             let productDetail = await this.$api('/api/productDetail', { param: [this.productId] });
             if (productDetail.length > 0) {
                 this.productDetail = productDetail[0];
-                this.totalPrice = this.productDetail.producr_price * this.total;
+                this.totalPrice = this.productDetail.product_price * this.total;
             }
             console.log(this.productDetail);
         },
